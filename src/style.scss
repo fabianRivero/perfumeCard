@@ -1,0 +1,116 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+#back-screen {
+  background-color: hsl(30, 38%, 92%);
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#preview-card{
+  border-radius: 10px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 350px;  
+  .product-image-desktop{
+    display: none;
+  }
+  .product-image-mobile{
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0px 0px ;
+  }
+
+  .product-details{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .product-type{
+      font-size: 14px;
+      letter-spacing: 5px;
+      color: hsl(228, 12%, 48%);
+    }
+    .product-name{
+      font-size: 35px;
+      line-height: 35px;
+      font-weight: 700;
+    }
+    .description{
+      font-size: 14px;
+      line-height: 23px;
+      color: hsl(228, 12%, 48%);
+    }
+  }
+
+  .price{
+    display: flex;
+    gap: 17px;
+    align-items: center;
+    .current-price{
+      font-size: 30px;
+      color: hsl(158, 36%, 37%);
+      font-weight: 700;
+      font-family: "Fraunces", sans-serif;
+    }
+
+    .previous-price{
+      font-size: 13px;
+      text-decoration: line-through;
+      color: hsl(228, 12%, 48%);
+    }
+  }
+  button{
+    padding: 11px 20px;
+    font-family: "Montserrat", sans-serif;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    background-color: hsl(158, 36%, 37%);
+    cursor: pointer;
+    &:hover{
+      background-color: hsl(158, 42%, 18%);
+    }
+    img{
+      height: 12px;
+      width: auto;
+      margin-right: 7px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  #preview-card{
+    flex-direction: row;
+    height: 420px;
+    width: 600px;
+    
+    .product-image-desktop{
+      display: block;
+      width: 100%;
+      border-radius: 10px 0px 0px 10px;
+    }
+    .product-image-mobile{
+      display: none;
+    }
+
+    .product-details{
+      width: 80%;      
+
+      .product-name{
+        font-size: 40px;
+        line-height: 40px;
+      }
+    }
+  }
+}  
+
